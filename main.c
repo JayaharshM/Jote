@@ -31,10 +31,22 @@ void print_all_dir() {
     closedir(dir);
 }
 
+void create_newnote() {
+    //char username[] = "";
+    char filename[] = "testy";
+    char path[256];
+    snprintf(path, sizeof(path), "/Users/jayaharshm/notes/%s.txt", filename);
+    printf("path%s", path);
+    FILE *file = fopen(path, "a");
+    system("nano /Users/jayaharshm/notes/testy.txt");
+
+}
+
 int main() {
     // welcome message
     printf("<<<Hello Welcome to Jote the Personal Note taking terminal App>>>\n");
     print_all_dir();
+    create_newnote();
 
     return 0;
 }
